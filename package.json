@@ -1,6 +1,6 @@
 {
   "name": "dump-stream",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple stream that dumps a stream to a string.",
   "license": "GPL-3.0",
   "author": "Danny McClanahan <danieldmcclanahan@gmail.com>",
