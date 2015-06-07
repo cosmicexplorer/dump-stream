@@ -9,6 +9,6 @@ Takes a stream and turns it into a string. Voila.
 ToStringStream = require('to-string-stream');
 var stream = new ToStringStream();
 getReadableStreamSomehow().pipe(stream).on('finish', function(){
-  console.log(s.dump());
+  console.log(stream.dump());
 });
 ```
