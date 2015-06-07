@@ -5,7 +5,7 @@ NPM_DIR = node_modules
 NPM_BIN := $(shell npm bin)
 COFFEE_BIN := $(NPM_BIN)/coffee
 
-OBJ := to-string-stream.js
+OBJ := dump-stream.js
 
 all: $(OBJ)
 

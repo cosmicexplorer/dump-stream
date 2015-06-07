@@ -1,17 +1,17 @@
-# ToStringStream = require 'to-string-stream'
-# s = new ToStringStream
+# DumpStream = require 'dump-stream'
+# s = new DumpStream
 # getReadableStreamSomehow().pipe(s).on 'finish', ->
 #   console.log s.dump()
 
 Writable = require('stream').Writable
 
 module.exports =
-class ToStringStream extends Writable
+class DumpStream extends Writable
   constructor: (opts) ->
     if not opts
       opts = {}
-    if not @ instanceof ToStringStream
-      return new ToStringStream opts
+    if not @ instanceof DumpStream
+      return new DumpStream opts
     else
       Writable.call @, opts
 

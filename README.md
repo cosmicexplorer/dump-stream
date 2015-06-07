@@ -1,13 +1,13 @@
-to-string-stream
+dump-stream
 ================
 
-Takes a stream and turns it into a string. Voila.
+Takes a stream and dumps it to a string. Voila.
 
 # USAGE
 
 ```javascript
-ToStringStream = require('to-string-stream');
-var stream = new ToStringStream();
+DumpStream = require('dump-stream');
+var stream = new DumpStream();
 getReadableStreamSomehow().pipe(stream).on('finish', function(){
   console.log(stream.dump());
 });
