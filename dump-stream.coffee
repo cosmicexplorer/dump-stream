@@ -15,6 +15,16 @@ class DumpStream extends Writable
     else
       Writable.call @, opts
 
+    @src = null
+    cbError = (err) =>
+      @emit 'error', err
+    @on 'pipe', (src) =>
+      src.on 'error', cbError
+      @src = src
+    @on 'unpipe', (src) =>
+      src.removeListener 'error', cbError
+      @src = null
+
     @string = ""
 
   _write: (chunk, enc, cb) ->
