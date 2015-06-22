@@ -8,6 +8,7 @@ Writable = require('stream').Writable
 module.exports =
 class DumpStream extends Writable
   constructor: (opts) ->
+    opts.readableObjectMode = yes
     if not opts
       opts = {}
     if not @ instanceof DumpStream
