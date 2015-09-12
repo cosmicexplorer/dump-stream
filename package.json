@@ -1,13 +1,13 @@
 {
   "name": "dump-stream",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A simple stream that dumps a stream to a string.",
   "license": "GPL-3.0",
   "author": "Danny McClanahan <danieldmcclanahan@gmail.com>",
   "main": "dump-stream.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/cosmicexplorer/to-string-stream.git"
+    "url": "git://github.com/cosmicexplorer/dump-stream.git"
   },
   "scripts": {
     "prepublish": "make"
@@ -15,9 +15,12 @@
   "keywords": [
     "string",
     "stream",
+    "array",
+    "collect",
+    "dump",
     "utility"
   ],
   "devDependencies": {
-    "coffee-script": "1.9.x"
+    "coffee-script": "^1.10.0"
   }
 }

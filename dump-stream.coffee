@@ -8,8 +8,7 @@ Writable = require('stream').Writable
 module.exports =
 class DumpStream extends Writable
   constructor: (opts = {}) ->
-    if not opts
-      opts = {}
+    opts.objectMode = opts.outputType is 'Array'
     if not @ instanceof DumpStream
       return new DumpStream opts
     else
@@ -25,11 +24,16 @@ class DumpStream extends Writable
       src.removeListener 'error', cbError
       @src = null
 
-    @string = ""
+    switch opts.outputType
+      when 'Array'
+        @chunk = []
+        @concatFun = (chk, obj) -> chk.concat obj
+      else
+        @chunk = ""
+        @concatFun = (chk, obj) -> chk += obj.toString()
 
   _write: (chunk, enc, cb) ->
-    @string += chunk.toString()
+    @chunk = @concatFun @chunk, chunk
     cb?()
 
-  dump: ->
-    @string
+  dump: -> @chunk
